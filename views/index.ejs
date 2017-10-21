@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Welcome to the NOWTV DCO data generator</h1>
+    <p>Let's get started... Please select the creative sizes you would like to create.</p>
+	<form action='/selected-creative-sizes' method='post'>
+		<div class='form'>
+			<label for='campaign-name'>Campaign name: </label>
+			<input id='campaign-name' name='campaignName' type='text' placeholder='Enter the campaign name'/>
+		</div>
+		<div class='form'>
+			<label for='120x600'>Creative 120x600</label>
+			<input id='120x600' name='120x600' type='checkbox' value='120x600' onchange='validateCheckboxes()'/>
+		</div>
+		<div class='form'>
+			<label for='160x600'>Creative 160x600</label>
+			<input id='160x600' name='160x600' type='checkbox' value='160x600' onchange='validateCheckboxes()'/>
+		</div>
+		<div class='form'>
+			<label for='300x250'>Creative 300x250</label>
+			<input id='300x250' name='300x250' type='checkbox' value='300x250' onchange='validateCheckboxes()'/>
+		</div>
+		<div class='form'>
+			<label for='468x60'>Creative 468x60</label>
+			<input id='468x60' name='468x60' type='checkbox' value='468x60' onchange='validateCheckboxes()'/>
+		</div>
+		<div class='form'>
+			<label for='728x90'>Creative 728x90</label>
+			<input id='728x90' name='728x90' type='checkbox' value='728x90' onchange='validateCheckboxes()'/>
+		</div>
+		<div class='form'>
+			<label for='300x50'>Creative 300x50</label>
+			<input id='300x50' name='300x50' type='checkbox' value='300x50' onchange='validateCheckboxes()'/>
+		</div>
+		<div class='form'>
+			<label for='320x50'>Creative 320x50</label>
+			<input id='320x50' name='320x50' type='checkbox' value='320x50' onchange='validateCheckboxes()'/>
+		</div>
+		<div class='form'>
+			<label for='300x600'>Creative 300x600</label>
+			<input id='300x600' name='300x600' type='checkbox' value='300x600' onchange='validateCheckboxes()'/>
+		</div>
+		<div class='form'>
+			<label for='970x250'>Creative 970x250</label>
+			<input id='970x250' name='970x250' type='checkbox' value='970x250' onchange='validateCheckboxes()'/>
+		</div>
+		<div class='form'>
+			<input id='submit' type='submit' value='Create creative sizes'/>
+		</div>
+	</form>
+	<footer>
+    	<img alt="Sky Works logo" src="images/sky-works-logo.png" width="160" height="32"/>
+    </footer>
+	<script type='text/javascript'>
+		document.getElementById('submit').setAttribute('disabled', 'disabled');
+		console.dir(document.getElementsByTagName('input'));
+		function validateCheckboxes() {
+			var tags = 0;
+			for(var i = 0; i< document.getElementsByTagName('input').length; i++) {
+				if(document.getElementsByTagName('input')[i].type === 'checkbox' && document.getElementsByTagName('input')[i].checked === false)
+				{
+					tags++;
+				}
+			}
+			console.log(tags);
+			if(tags == 9) {
+				document.getElementById('submit').setAttribute('disabled', 'disabled');
+			} else {
+				document.getElementById('submit').removeAttribute('disabled');
+			}
+		}
+	</script>
+  </body>
+</html>

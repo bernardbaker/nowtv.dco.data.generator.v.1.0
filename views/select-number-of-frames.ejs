@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Select the number of frames needed by your creatives</h1>
+    <p>Please select the number of frames that each creative will feature.</p>
+	<form action='/selected-number-of-frames' method='post'>
+		<input type='hidden' name='campaignName' value='<%=creatives.campaignName%>'/>
+		<% if(creatives.hasOwnProperty('120x600')) { %>
+		<div class='form'>
+			<label for='120x600'>Creative 120x600</label>
+			<input id='120x600' name='banner120x600Frames' type='number' value='1' min='1' max='10' onchange='validate(this)'/>
+		</div>
+		<% } %>
+		<% if(creatives.hasOwnProperty('160x600')) { %>
+		<div class='form'>
+			<label for='160x600'>Creative 160x600</label>
+			<input id='160x600' name='banner160x600Frames' type='number' value='1' min='1' max='10' onchange='validate(this)'/>
+		</div>
+		<% } %>
+		<% if(creatives.hasOwnProperty('300x250')) { %>
+		<div class='form'>
+			<label for='300x250'>Creative 300x250</label>
+			<input id='300x250' name='banner300x250Frames' type='number' value='1' min='1' max='10' onchange='validate(this)'/>
+		</div>
+		<% } %>
+		<% if(creatives.hasOwnProperty('468x60')) { %>
+		<div class='form'>
+			<label for='468x60'>Creative 468x60</label>
+			<input id='468x60' name='banner468x60Frames' type='number' value='1' min='1' max='10' onchange='validate(this)'/>
+		</div>
+		<% } %>
+		<% if(creatives.hasOwnProperty('728x90')) { %>
+		<div class='form'>
+			<label for='728x90'>Creative 728x90</label>
+			<input id='728x90' name='banner728x90Frames' type='number' value='1' min='1' max='10' onchange='validate(this)'/>
+		</div>
+		<% } %>
+		<% if(creatives.hasOwnProperty('300x50')) { %>
+		<div class='form'>
+			<label for='300x50'>Creative 300x50</label>
+			<input id='300x50' name='banner300x50Frames' type='number' value='1' min='1' max='10' onchange='validate(this)'/>
+		</div>
+		<% } %>
+		<% if(creatives.hasOwnProperty('320x50')) { %>
+		<div class='form'>
+			<label for='320x50'>Creative 320x50</label>
+			<input id='320x50' name='banner320x50Frames' type='number' value='1' min='1' max='10' onchange='validate(this)'/>
+		</div>
+		<% } %>
+		<% if(creatives.hasOwnProperty('300x600')) { %>
+		<div class='form'>
+			<label for='300x600'>Creative 300x600</label>
+			<input id='300x600' name='banner300x600Frames' type='number' value='1' min='1' max='10' onchange='validate(this)'/>
+		</div>
+		<% } %>
+		<% if(creatives.hasOwnProperty('970x250')) { %>
+		<div class='form'>
+			<label for='970x250'>Creative 970x250</label>
+			<input id='970x250' name='banner970x250Frames' type='number' value='1' min='1' max='10' onchange='validate(this)'/>
+		</div>
+		<% } %>
+		<div class='form'>
+			<input id='submit' type='submit' value='Create creative sizes'/>
+		</div>
+	</form>
+	<footer>
+    	<img class="footer-logo" alt="Sky Works logo" src="images/sky-works-logo.png" width="160" height="32"/>
+    </footer>
+	<script type='text/javascript'>
+		function validate(e) {
+			console.dir(e);
+			if(e.valueAsNumber > 0 && e.valueAsNumber < 11)
+			{
+				document.getElementById('submit').removeAttribute('disabled');
+			}
+			else
+			{
+				document.getElementById('submit').setAttribute('disabled', 'disabled');
+			}
+		}
+	</script>
+  </body>
+</html>

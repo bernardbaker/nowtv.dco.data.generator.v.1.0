@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Select the frame content for your creatives</h1>
+    <p>Please select the frame content that your creative will use.</p>
+	<form id='form' action='/selected-frame-content' method='post'>
+		<input type='hidden' name='campaignName' value='<%=creatives.campaignName%>'/>
+		<%
+		if(creatives.hasOwnProperty('banner120x600Frames'))
+		{
+			var length = parseInt(creatives.banner120x600Frames);
+		%>
+			<div>
+				<h2>Banner 120x600 content</h2>
+				<input type="hidden" name='banner120x600' value='<%= length %>'>
+			</div>
+		<%
+			for(var i = 1; i <= length; i++) {
+				var forId = "banner120x600-frame-"+i+"-content";
+				var label = "Content for frame "+i;
+		%>
+			<div class='form'>
+				<label for='<%= forId %>'><%= label %></label>
+				<select id='<%= forId %>' name='<%= forId %>'>
+					<%- options120x600 %>
+				</select>
+			</div>
+
+		<%
+			}
+		}
+		
+		if(creatives.hasOwnProperty('banner160x600Frames'))
+		{
+			var length = parseInt(creatives.banner160x600Frames);
+		%>
+			<div>
+				<h2>Banner 160x600 content</h2>
+				<input type="hidden" name='banner160x600' value='<%= length %>'>
+			</div>
+		<%
+			for(var i = 1; i <= length; i++) {
+				var forId = "banner160x600-frame-"+i+"-content";
+				var label = "Content for frame "+i;
+		%>
+			<div class='form'>
+				<label for='<%= forId %>'><%= label %></label>
+				<select id='<%= forId %>' name='<%= forId %>'>
+					<%- options160x600 %>
+				</select>
+			</div>
+
+		<%
+			}
+		}
+		
+		if(creatives.hasOwnProperty('banner300x250Frames'))
+		{
+			var length = parseInt(creatives.banner300x250Frames);
+		%>
+			<div>
+				<h2>Banner 300x250 content</h2>
+				<input type="hidden" name='banner300x250' value='<%= length %>'>
+			</div>
+		<%
+			for(var i = 1; i <= length; i++) {
+				var forId = "banner300x250-frame-"+i+"-content";
+				var label = "Content for frame "+i;
+		%>
+			<div class='form'>
+				<label for='<%= forId %>'><%= label %></label>
+				<select id='<%= forId %>' name='<%= forId %>'>
+					<%- options300x250 %>
+				</select>
+			</div>
+
+		<%
+			}
+		}
+		
+		if(creatives.hasOwnProperty('banner468x60Frames'))
+		{
+			var length = parseInt(creatives.banner468x60Frames);
+		%>
+			<div>
+				<h2>Banner 468x60 content</h2>
+				<input type="hidden" name='banner468x60' value='<%= length %>'>
+			</div>
+		<%
+			for(var i = 1; i <= length; i++) {
+				var forId = "banner468x60-frame-"+i+"-content";
+				var label = "Content for frame "+i;
+		%>
+			<div class='form'>
+				<label for='<%= forId %>'><%= label %></label>
+				<select id='<%= forId %>' name='<%= forId %>'>
+					<%- options468x60 %>
+				</select>
+			</div>
+
+		<%
+			}
+		}
+		
+		if(creatives.hasOwnProperty('banner728x90Frames'))
+		{
+			var length = parseInt(creatives.banner728x90Frames);
+		%>
+			<div>
+				<h2>Banner 728x90 content</h2>
+				<input type="hidden" name='banner728x90' value='<%= length %>'>
+			</div>
+		<%
+			for(var i = 1; i <= length; i++) {
+				var forId = "banner728x90-frame-"+i+"-content";
+				var label = "Content for frame "+i;
+		%>
+			<div class='form'>
+				<label for='<%= forId %>'><%= label %></label>
+				<select id='<%= forId %>' name='<%= forId %>'>
+					<%- options728x90 %>
+				</select>
+			</div>
+
+		<%
+			}
+		}
+		
+		if(creatives.hasOwnProperty('banner300x50Frames'))
+		{
+			var length = parseInt(creatives.banner300x50Frames);
+		%>
+			<div>
+				<h2>Banner 300x50 content</h2>
+				<input type="hidden" name='banner300x50' value='<%= length %>'>
+			</div>
+		<%
+			for(var i = 1; i <= length; i++) {
+				var forId = "banner300x50-frame-"+i+"-content";
+				var label = "Content for frame "+i;
+		%>
+			<div class='form'>
+				<label for='<%= forId %>'><%= label %></label>
+				<select id='<%= forId %>' name='<%= forId %>'>
+					<%- options300x50 %>
+				</select>
+			</div>
+
+		<%
+			}
+		}
+		
+		if(creatives.hasOwnProperty('banner320x50Frames'))
+		{
+			var length = parseInt(creatives.banner320x50Frames);
+		%>
+			<div>
+				<h2>Banner 320x50 content</h2>
+				<input type="hidden" name='banner320x50' value='<%= length %>'>
+			</div>
+		<%
+			
+			for(var i = 1; i <= length; i++) {
+				var forId = "banner320x50-frame-"+i+"-content";
+				var label = "Content for frame "+i;
+		%>
+			<div class='form'>
+				<label for='<%= forId %>'><%= label %></label>
+				<select id='<%= forId %>' name='<%= forId %>'>
+					<%- options320x50 %>
+				</select>
+			</div>
+		<%
+			}
+		}
+		
+		if(creatives.hasOwnProperty('banner300x600Frames'))
+		{
+			var length = parseInt(creatives.banner300x600Frames);
+		%>
+			<div>
+				<h2>Banner 300x600 content</h2>
+				<input type="hidden" name='banner300x600' value='<%= length %>'>
+			</div>
+		<%
+			
+			for(var i = 1; i <= length; i++) {
+				var forId = "banner300x600-frame-"+i+"-content";
+				var label = "Content for frame "+i;
+		%>
+			<div class='form'>
+				<label for='<%= forId %>'><%= label %></label>
+				<select id='<%= forId %>' name='<%= forId %>'>
+					<%- options300x600 %>
+				</select>
+			</div>
+		<%
+			}
+		}
+		
+		if(creatives.hasOwnProperty('banner970x250Frames'))
+		{
+			var length = parseInt(creatives.banner970x250Frames);
+		%>
+			<div>
+				<h2>Banner 970x250 content</h2>
+				<input type="hidden" name='banner970x250' value='<%= length %>'>
+			</div>
+		<%
+			
+			for(var i = 1; i <= length; i++) {
+				var forId = "banner970x250-frame-"+i+"-content";
+				var label = "Content for frame "+i;
+		%>
+			<div class='form'>
+				<label for='<%= forId %>'><%= label %></label>
+				<select id='<%= forId %>' name='<%= forId %>'>
+					<%- options970x250 %>
+				</select>
+			</div>
+		<%
+			}
+		}
+		%>
+		<div class='form'>
+			<input id='submit' type='submit' value='Generate your content'/>
+		</div>
+	</form>
+	<footer class='footer-on-content-page'>
+    	<img alt="Sky Works logo" src="images/sky-works-logo.png" width="160" height="32"/>
+    </footer>
+  </body>
+</html>
